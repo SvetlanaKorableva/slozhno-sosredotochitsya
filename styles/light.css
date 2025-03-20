@@ -1,12 +1,45 @@
+/* light.css */
+
 /*
   Специально для светлой темы при наличии класса.
   Здесь окажутся стили, которые нужно переопределить принудительно,
-  переключая тему
+  переключая тему.
 */
 
 .page.theme_light {
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --accent-color: #ff8dcb;
+  --header-background: transparent;
+  --button-background: transparent;
+  --button-hover: transparent;
+
+  /* Дополнительные стили для декоративных элементов */
+  .header__rec {
+    display: none; /* Скрываем REC в светлой теме */
+  }
+
+  .header {
+    background-image: url('../images/cover-image-light.png');
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --accent-color: #ff8dcb;
+    --header-background: #f5f5f5;
+    --button-background: #e0e0e0;
+    --button-hover: #bdbdbd;
+
+    /* Дополнительные стили для декоративных элементов */
+    .header__rec {
+      display: none; /* Скрываем REC в светлой теме */
+    }
+
+    .header {
+      background-image: url('../images/cover-image-light.png');
+    }
+  }
 }

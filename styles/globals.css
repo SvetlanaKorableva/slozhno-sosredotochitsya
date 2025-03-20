@@ -1,25 +1,10 @@
-/* Глобальные стили для проекта, их можно дополнять и менять по желанию */
+/* globals.css */
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-body {
-  min-inline-size: 375px;
-  max-inline-size: 1440px;
-  margin: 0 auto;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
+/* Сброс стандартных стилей */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 ul {
@@ -33,10 +18,44 @@ picture {
   padding: 0;
 }
 
+/* Глобальные настройки для текста и элементов */
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Универсальные стили для кнопок и ссылок */
 button,
 a {
   color: currentColor;
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
+  text-decoration: none; /* Убираем подчеркивание у ссылок */
+  cursor: pointer; /* Курсор указывает, что элемент кликабелен */
+  border: none; /* Убираем рамку у кнопок */
+  outline: none; /* Убираем контур при фокусе */
+  background-color: var(--button-background);
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--button-hover);
+}
+
+/* Отключение выделения текста для интерактивных элементов */
+button,
+input,
+select,
+textarea {
+  user-select: none;
 }

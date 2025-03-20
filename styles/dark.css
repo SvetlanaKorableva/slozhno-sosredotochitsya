@@ -1,12 +1,37 @@
+/* dark.css */
+
 /*
   Специально для тёмной темы при наличии класса,
   здесь окажутся стили, которые нужно переопределить принудительно,
-  переключая тему
+  переключая тему.
 */
 
 .page.theme_dark {
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
+  --background-color: #121212;
+  --text-color: #ff0070;
+  --accent-color: #ff0070;
+  --header-background: #1e1e1e;
+  --button-background: transparent;
+  --button-hover: transparent;
+
+  /* Дополнительные стили для декоративных элементов */
+  .header {
+    background-image: url('../images/cover-image-dark.png');
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #121212;
+    --text-color: #ffffff;
+    --accent-color: #ff0070;
+    --header-background: #1e1e1e;
+    --button-background: transparent;
+    --button-hover: transparent;
+
+    /* Дополнительные стили для декоративных элементов */
+    .header {
+      background-image: url('../images/cover-image-dark.png');
+    }
+  }
 }

@@ -1,40 +1,70 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Сложно сосредоточиться</title>
-  </head>
-  <body class="page">
-    <header class="header decorated-zone">
-      <nav class="header__theme-menu">
-        <ul class="header__theme-menu-list">
-          <li class="header__theme-menu-item">
-            <button
-              class="header__theme-menu-button header__theme-menu-button_type_light"
-            >
-              День
-            </button>
-          </li>
-          <li class="header__theme-menu-item">
-            <button
-              class="header__theme-menu-button header__theme-menu-button_active header__theme-menu-button_type_auto"
-              disabled
-            >
-              Авто
-            </button>
-          </li>
-          <li class="header__theme-menu-item">
-            <button
-              class="header__theme-menu-button header__theme-menu-button_type_dark"
-            >
-              Неон
-            </button>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <script src="./scripts/script.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="dark light" />
+  <title>Сложно сосредоточиться</title>
+  <!-- Подключение стилей -->
+  <link rel="stylesheet" href="./styles/variables.css">
+  <link rel="stylesheet" href="./styles/globals.css">
+  <link rel="stylesheet" href="./styles/style.css">
+  <link rel="stylesheet" href="./styles/dark.css">
+  <link rel="stylesheet" href="./styles/light.css">
+  <!-- Фавиконка -->
+  <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+</head>
+<body class="page">
+  <!-- Шапка -->
+  <header class="header decorated-zone">
+    <!-- Декоративный элемент REC -->
+    <div class="header__rec" aria-hidden="true">REC</div>
+
+    <!-- Кнопки переключения тем -->
+    <nav class="header__theme-menu">
+      <ul class="header__theme-menu-list">
+        <li class="header__theme-menu-item">
+          <button class="header__theme-menu-button header__theme-menu-button_type_light">день</button>
+        </li>
+        <li class="header__theme-menu-item">
+          <button
+            class="header__theme-menu-button header__theme-menu-button_active header__theme-menu-button_type_auto"
+            disabled
+          >
+            авто
+          </button>
+        </li>
+        <li class="header__theme-menu-item">
+          <button class="header__theme-menu-button header__theme-menu-button_type_dark">неон</button>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Заголовок -->
+    <h1 class="header__title title-decor">no focus</h1>
+
+    <!-- Описание -->
+    <p class="header__subtitle">
+      Что делать, когда не можешь делать ничего<br>
+      Или почему нам так сложно сконцентрироваться, особенно когда очень надо
+    </p>
+  </header>
+
+  <!-- Основной контент -->
+  <main class="content">
+    <h2 class="content__title">Пример текста</h2>
+    <p class="content__text">
+      Здесь может быть любой текст или контент. Например, описание продукта или статья.
+    </p>
+  </main>
+
+  <!-- Подвал -->
+  <footer class="footer">
+    <p class="footer__text">&copy; 2023 Сложно сосредоточиться</p>
+  </footer>
+
+  <!-- Скрипт для переключения тем -->
+  <script src="./scripts/script.js"></script>
+</body>
 </html>

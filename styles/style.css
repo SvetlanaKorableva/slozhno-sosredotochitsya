@@ -1,5 +1,127 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
+/* Общие стили */
 .page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+}
+
+.header {
+  position: relative;
+  width: 100%; /* Занимает всю ширину экрана */
+  background-color: var(--header-background);
+  background-image: url('../images/cover-image-light.png'); /* Фоновое изображение */
+  background-size: cover; /* Занимает всю доступную область */
+  background-position: center; /* Центрируем изображение */
+  background-repeat: no-repeat; /* Запрещаем повторение */
+  margin: 0; /* Убираем внешние отступы */
+}
+
+/* Размеры шапки для разрешения 1024x768 */
+@media (min-width: 1024px) {
+  .header {
+    height: calc(100vw * (768 / 1024)); /* Пропорции 1024:768 */
+    max-height: 768px; /* Ограничиваем максимальную высоту */
+  }
+}
+
+/* Размеры шапки для разрешения 768x1024 */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .header {
+    height: calc(100vw * (1024 / 768)); /* Пропорции 768:1024 */
+    max-height: 1024px; /* Ограничиваем максимальную высоту */
+  }
+}
+
+/* Размеры шапки для разрешения 375x668 */
+@media (max-width: 767px) {
+  .header {
+    height: calc(100vw * (668 / 375)); /* Пропорции 375:668 */
+    max-height: 668px; /* Ограничиваем максимальную высоту */
+  }
+}
+
+/* Переключатель тем */
+.header__theme-menu {
+  position: absolute;
+  top: 1rem; /* Поднимаем вверх */
+  left: 50%; /* Центрируем по горизонтали */
+  transform: translateX(-50%); /* Корректируем позицию */
+  display: flex;
+  gap: 0.5rem;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.header__theme-menu-button {
+  padding: 0.1rem 1rem;
+  color: #353430; /* Цвет текста */
+  border-radius: 0; /* Убираем рамку */
+  text-decoration: none; /* Убираем подчеркивание */
+  cursor: pointer; /* Добавляем указатель мыши */
+  font-family: inherit; /* Наследуем шрифт */
+  font-size: inherit; /* Наследуем размер шрифта */
+}
+
+.header__theme-menu-button:hover {
+  text-decoration: underline; /* Подчеркивание при наведении */
+}
+
+.header__theme-menu-button_active {
+  box-shadow: inset 0 0 0 1px #353430; /* Обводка для активной кнопки */
+  border-radius: none;
+  pointer-events: none; /* Отключаем взаимодействие */
+}
+
+/* Заголовок "no focus" */
+.header__title {
+  position: absolute;
+  top: 45%; /* Слегка выше центра */
+  left: 2rem; /* Прижат к левому краю */
+  transform: translateY(-50%); /* Корректируем позицию по вертикали */
+  font-family: 'IBM Plex Mono', monospace; /* Шрифт IBM Plex Mono */
+  font-weight: bold; /* Жирность текста */
+  text-shadow: 4px 4px 0 #FF8DCB; /* Тень текста */
+  text-align: left; /* Текст прижат к левому краю */
+  margin: 0; /* Убираем отступы */
+  color: #FFC2E6; /* Основной цвет текста */
+  line-height: 1; /* Убираем межстрочный интервал */
+  word-wrap: break-word; /* Перенос текста на новую строку */
+  white-space: normal; /* Разрешаем перенос текста */
+  font-size: clamp(6.0rem, 14vw, 19rem); /* Адаптивный размер текста */
+}
+
+/* Описание */
+.header__subtitle {
+  position: absolute;
+  top: 75%; /* Опускаем ниже заголовка */
+  right: 2rem; /* Прижат к правому краю */
+  transform: translateY(-50%); /* Корректируем позицию по вертикали */
+  font-size: 18px; /* Адаптивный размер текста */
+  color: #353430; /* Цвет текста */
+  background-color: #FF8DCB; /* Цвет выделения */
+  max-width: min(60vw, 30rem); /* Максимальная ширина зависит от экрана */
+  word-wrap: break-word; /* Перенос текста на новую строку */
+  font-weight: bold; /* Выделяем текст жирным */
+  text-align: left; /* Выравнивание текста */
+}
+
+/* Декоративный элемент REC */
+.header__rec {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 0.875rem;
+  color: var(--accent-color);
+  text-transform: uppercase;
+}
+
+.header__rec::before {
+  content: '•';
+  margin-right: 0.25rem;
 }
