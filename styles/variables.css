@@ -1,4 +1,10 @@
-/*
-  Переменные для вашего проекта
-  и их переопределение под различные устройства
-*/
+/* variables.css */
+:root {
+  --background-color: #121212; /* Фон */
+  --text-color: #ffffff; /* Основной текст */
+  --accent-color: #ff0070; /* Акцентный цвет */
+  --header-background: #1e1e1e; /* Фон шапки */
+  --button-background: #333333; /* Фон кнопок */
+  --button-hover: #4d4d4d; /* Наведение на кнопки */
+  --spacing-unit: 1rem; /* Базовый отступ */
+}
