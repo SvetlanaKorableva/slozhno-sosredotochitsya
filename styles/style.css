@@ -334,3 +334,32 @@
     grid-row: auto !important; /* Элементы автоматически располагаются по порядку */
   }
 }
+
+/* Стили для футера */
+.footer {
+  position: relative; /* Позиционирование относительно родителя */
+  width: 100%; /* Занимает всю ширину экрана */
+  min-height: 90vh; /* Минимальная высота футера (например, 50% от высоты экрана) */
+  background-color: var(--header-background); /* Фоновый цвет (если переменная определена) */
+  background-image: url('/images/cover-image-light.png'); /* Фоновое изображение */
+  background-size: cover; /* Занимает всю доступную область */
+  background-position: center; /* Центрируем изображение */
+  background-repeat: no-repeat; /* Запрещаем повторение */
+  margin: 0; /* Убираем внешние отступы */
+  display: flex; /* Используем Flexbox для центрирования */
+  justify-content: center; /* Горизонтальное центрирование */
+  align-items: center; /* Вертикальное центрирование */
+}
+
+/* Текст в футере */
+.footer__text {
+  font-family: 'IBM Plex Mono', monospace; /* Шрифт IBM Plex Mono */
+  font-weight: bold; /* Жирность текста */
+  text-shadow: 2px 2px 0 #FF8DCB; /* Тень текста */
+  color: #FFC2E6; /* Основной цвет текста */
+  line-height: 1; /* Убираем межстрочный интервал */
+  word-wrap: break-word; /* Перенос текста на новую строку */
+  white-space: normal; /* Разрешаем перенос текста */
+  font-size: clamp(6.0rem, 14vw, 19rem); /* Адаптивный размер текста */
+  text-align: center; /* Выравнивание текста по центру */
+}
